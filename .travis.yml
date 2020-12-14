@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - lts/*
+install:
+  - yarn install
+script:
+  - yarn docs:build
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: ad5094ab4a2628b85658655e19c7a44d1d7b7610
+  keep_history: true
+  on:
+    branch: master
