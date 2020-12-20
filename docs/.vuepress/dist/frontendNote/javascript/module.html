@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>JS模块化 | Marston的学习笔记</title>
+    <meta name="generator" content="VuePress 1.7.1">
+    <link rel="icon" href="/img/logo.ico">
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/assets/css/0.styles.992cb7aa.css" as="style"><link rel="preload" href="/assets/js/app.564da236.js" as="script"><link rel="preload" href="/assets/js/2.d91fe4b7.js" as="script"><link rel="preload" href="/assets/js/23.6a932405.js" as="script"><link rel="prefetch" href="/assets/js/10.cec2d539.js"><link rel="prefetch" href="/assets/js/11.b3260b01.js"><link rel="prefetch" href="/assets/js/12.cbfae2d1.js"><link rel="prefetch" href="/assets/js/13.348e7657.js"><link rel="prefetch" href="/assets/js/14.0875db16.js"><link rel="prefetch" href="/assets/js/15.c7f22e42.js"><link rel="prefetch" href="/assets/js/16.75c055e4.js"><link rel="prefetch" href="/assets/js/17.c0075fb7.js"><link rel="prefetch" href="/assets/js/18.ef3e7319.js"><link rel="prefetch" href="/assets/js/19.e76986d6.js"><link rel="prefetch" href="/assets/js/20.61f47c16.js"><link rel="prefetch" href="/assets/js/21.a906f2ac.js"><link rel="prefetch" href="/assets/js/22.32473bf3.js"><link rel="prefetch" href="/assets/js/24.a206f5d7.js"><link rel="prefetch" href="/assets/js/25.64773eea.js"><link rel="prefetch" href="/assets/js/26.3c0340df.js"><link rel="prefetch" href="/assets/js/27.5e443b80.js"><link rel="prefetch" href="/assets/js/28.118963d8.js"><link rel="prefetch" href="/assets/js/29.0d509471.js"><link rel="prefetch" href="/assets/js/3.ebaf8eed.js"><link rel="prefetch" href="/assets/js/30.bacfc585.js"><link rel="prefetch" href="/assets/js/31.5a3c4e0c.js"><link rel="prefetch" href="/assets/js/32.117edd3d.js"><link rel="prefetch" href="/assets/js/33.df35cf73.js"><link rel="prefetch" href="/assets/js/34.46d8d6b0.js"><link rel="prefetch" href="/assets/js/4.8015288e.js"><link rel="prefetch" href="/assets/js/5.c44f34e2.js"><link rel="prefetch" href="/assets/js/6.c0111f7b.js"><link rel="prefetch" href="/assets/js/7.14b9824c.js"><link rel="prefetch" href="/assets/js/8.e7d5bfcd.js"><link rel="prefetch" href="/assets/js/9.4381ebbf.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.992cb7aa.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Marston的学习笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端笔记" class="dropdown-title"><span class="title">前端笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端笔记" class="mobile-dropdown-title"><span class="title">前端笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontendNote/javascript/" class="nav-link router-link-active">
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/frontendNote/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/frontendNote/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/frontendNote/browser/" class="nav-link">
+  浏览器
+</a></li><li class="dropdown-item"><!----> <a href="/frontendNote/net/" class="nav-link">
+  网络
+</a></li><li class="dropdown-item"><!----> <a href="/frontendNote/engineering/" class="nav-link">
+  工程化
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="进军全栈" class="dropdown-title"><span class="title">进军全栈</span> <span class="arrow down"></span></button> <button type="button" aria-label="进军全栈" class="mobile-dropdown-title"><span class="title">进军全栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fullStack/nodejs/" class="nav-link">
+  nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/fullStack/koa/" class="nav-link">
+  koa
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面经总结" class="dropdown-title"><span class="title">面经总结</span> <span class="arrow down"></span></button> <button type="button" aria-label="面经总结" class="mobile-dropdown-title"><span class="title">面经总结</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myinterview/DailyIntership/" class="nav-link">
+  日常实习面经
+</a></li><li class="dropdown-item"><!----> <a href="/myinterview/2021Spring/" class="nav-link">
+  2021春招面经
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="前端笔记" class="dropdown-title"><span class="title">前端笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="前端笔记" class="mobile-dropdown-title"><span class="title">前端笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/frontendNote/javascript/" class="nav-link router-link-active">
+  JS
+</a></li><li class="dropdown-item"><!----> <a href="/frontendNote/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-item"><!----> <a href="/frontendNote/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-item"><!----> <a href="/frontendNote/browser/" class="nav-link">
+  浏览器
+</a></li><li class="dropdown-item"><!----> <a href="/frontendNote/net/" class="nav-link">
+  网络
+</a></li><li class="dropdown-item"><!----> <a href="/frontendNote/engineering/" class="nav-link">
+  工程化
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="进军全栈" class="dropdown-title"><span class="title">进军全栈</span> <span class="arrow down"></span></button> <button type="button" aria-label="进军全栈" class="mobile-dropdown-title"><span class="title">进军全栈</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fullStack/nodejs/" class="nav-link">
+  nodejs
+</a></li><li class="dropdown-item"><!----> <a href="/fullStack/koa/" class="nav-link">
+  koa
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="面经总结" class="dropdown-title"><span class="title">面经总结</span> <span class="arrow down"></span></button> <button type="button" aria-label="面经总结" class="mobile-dropdown-title"><span class="title">面经总结</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/myinterview/DailyIntership/" class="nav-link">
+  日常实习面经
+</a></li><li class="dropdown-item"><!----> <a href="/myinterview/2021Spring/" class="nav-link">
+  2021春招面经
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/frontendNote/javascript/" aria-current="page" class="sidebar-link">JavaScript</a></li><li><a href="/frontendNote/javascript/ES6Standard.html" class="sidebar-link">ES5、ES6新特性</a></li><li><a href="/frontendNote/javascript/JSDataType.html" class="sidebar-link">JS 数据类型</a></li><li><a href="/frontendNote/javascript/ergodic.html" class="sidebar-link">关于遍历</a></li><li><a href="/frontendNote/javascript/typeChange.html" class="sidebar-link">类型转换</a></li><li><a href="/frontendNote/javascript/buildInMethods.html" class="sidebar-link">常用内置方法</a></li><li><a href="/frontendNote/javascript/object.html" class="sidebar-link">对象</a></li><li><a href="/frontendNote/javascript/function.html" class="sidebar-link">函数</a></li><li><a href="/frontendNote/javascript/JSExecution.html" class="sidebar-link">JS执行机制</a></li><li><a href="/frontendNote/javascript/this.html" class="sidebar-link">关于this指向</a></li><li><a href="/frontendNote/javascript/domAndBom.html" class="sidebar-link">DOM和BOM</a></li><li><a href="/frontendNote/javascript/module.html" aria-current="page" class="active sidebar-link">JS模块化</a></li><li><a href="/frontendNote/javascript/asyncCoding.html" class="sidebar-link">异步编程</a></li><li><a href="/frontendNote/javascript/ajax.html" class="sidebar-link">ajax</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="js模块化"><a href="#js模块化" class="header-anchor">#</a> JS模块化</h1></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/frontendNote/javascript/domAndBom.html" class="prev">
+        DOM和BOM
+      </a></span> <span class="next"><a href="/frontendNote/javascript/asyncCoding.html">
+        异步编程
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.564da236.js" defer></script><script src="/assets/js/2.d91fe4b7.js" defer></script><script src="/assets/js/23.6a932405.js" defer></script>
+  </body>
+</html>

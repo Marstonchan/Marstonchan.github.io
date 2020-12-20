@@ -15,8 +15,7 @@ module.exports = {
             {
                 text: '前端笔记',
                 items: [
-                    { text: 'JS基础', link: '/frontendNote/jsBasics/' },
-                    { text: 'JS进阶', link: '/frontendNote/jsAdvance/' },
+                    { text: 'JS', link: '/frontendNote/javascript/' },
                     { text: 'CSS', link: '/frontendNote/css/' },
                     { text: 'HTML', link: '/frontendNote/html/' },
                     { text: '浏览器', link: '/frontendNote/browser/' },
@@ -31,15 +30,32 @@ module.exports = {
                     { text: 'koa', link: '/fullStack/koa/' }
                 ]
             },
-            { text: '面经总结', link: '/interviews/' }
+            {
+                text: '面经总结',
+                items: [
+                    { text: '日常实习面经', link: '/myinterview/DailyIntership/' },
+                    { text: '2021春招面经', link: '/myinterview/2021Spring/' }
+                ]
+            },
+
         ],
         sidebar: {
             // 前端笔记总结 侧边栏
-            '/frontendNote/jsBasics/': [
-                '/frontendNote/jsBasics/',
-            ],
-            '/frontendNote/jsAdvance/': [
-                '/frontendNote/jsAdvance/',
+            '/frontendNote/javascript/': [
+                '/frontendNote/javascript/',
+                '/frontendNote/javascript/ES6Standard',
+                '/frontendNote/javascript/JSDataType',
+                '/frontendNote/javascript/ergodic',
+                '/frontendNote/javascript/typeChange',
+                '/frontendNote/javascript/buildInMethods',
+                '/frontendNote/javascript/object',
+                '/frontendNote/javascript/function',
+                '/frontendNote/javascript/JSExecution',
+                '/frontendNote/javascript/this',
+                '/frontendNote/javascript/domAndBom',
+                '/frontendNote/javascript/module',
+                '/frontendNote/javascript/asyncCoding',
+                '/frontendNote/javascript/ajax',
             ],
             '/frontendNote/css/': [
                 '/frontendNote/css/',
@@ -66,10 +82,14 @@ module.exports = {
             ],
 
             // 面经侧边栏
-            '/interviews/': [
-                '/interviews/',
-                '/interviews/ByteBit1',
-                '/interviews/CVTE1'
+            '/myinterview/DailyIntership/': [
+                '/myinterview/DailyIntership/',
+                '/myinterview/DailyIntership/ByteBit1',
+                '/myinterview/DailyIntership/CVTE1',
+                '/myinterview/DailyIntership/CVTE2'
+            ],
+            '/myinterview/2021Spring/': [
+                '/myinterview/2021Spring/'
             ]
         },
         plugins: ['@vuepress/active-header-links']

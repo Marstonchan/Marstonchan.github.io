@@ -4,7 +4,7 @@ heroImage: /img/hero.png
 heroText: Marston心路历程
 tagline: 夯实基础，力争上游
 actionText: 开启旅程 →
-actionLink: /blog/index/
+actionLink: /contents
 features:
 - title:  
   details: 
