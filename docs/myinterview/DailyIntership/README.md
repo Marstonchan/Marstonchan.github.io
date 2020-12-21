@@ -1,7 +1,7 @@
 # 日常实习面经
 
-[字节一面](./DailyIntership/ByteBit1.md)
+[字节一面](./ByteBit1.md)
 
-[CVTE一面](./DailyIntership/CVTE1)
+[CVTE一面](./CVTE1)
 
-[CVTE二面](./DailyIntership/CVTE2)
+[CVTE二面](./CVTE2)
