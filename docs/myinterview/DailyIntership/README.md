@@ -4,6 +4,6 @@
 
 [CVTE一面](./CVTE1)
 
-[CVTE二面](./DailyIntership/CVTE2)
+[CVTE二面](./CVTE2)
 
-[百度一面](./DailyIntership/Baidu1)
+[百度一面](./Baidu1)
