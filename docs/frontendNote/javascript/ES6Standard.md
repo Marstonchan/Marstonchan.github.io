@@ -21,6 +21,8 @@ console.log(window.c) // undefined
 
 ### 2. 变量提升
 
+关于变量提升的详细解析可以看这篇：[JS执行机制之预编译](./JSExecution.md#预编译)
+
 var存在变量提升，在预编译过程中会将变量声明提升至文档的最前面，并将其初始化为undefined。注意它只是提升声明，并不提升赋值。
 
 ```javascript
@@ -285,3 +287,6 @@ await 命令后面的 Promise 对象，运行结果可能是 rejected，所以�
 ### 关于async在事件循环中的问题
 
 可以参见后面这篇笔记：[事件循环](./JSExecution.md#事件循环)
+
+## Proxy
+
