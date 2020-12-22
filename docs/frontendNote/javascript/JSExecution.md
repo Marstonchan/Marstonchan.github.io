@@ -9,8 +9,106 @@ sidebarDepth: 2
 > 参考博客：
 >
 > [JavaSrcipt - 预编译 @MonkeyChennn](https://www.jianshu.com/p/a91cddc5c705)
+>
+> [JavaScript预编译 @罗祥](https://zhuanlan.zhihu.com/p/50236805)
 
-JS的运行过程分为**预编译**和**执行**两个阶段，
+### 概述
+
+JS的运行过程分为**预编译**和**执行**两个阶段，在预编译阶段，会将变量和函数的声明提前到脚本的最前面执行，这里仅限于使用`var`和`function`的声明，`let`和`const`声明的变量不会有提升。这是对预编译最简单的理解。
+
+而且对于每一个函数，在执行的时候也会有预编译的过程。过程和全局的预编译类似。
+
+```javascript
+console.log(a); // undefined
+console.log(b); // f b(){}
+var a = 3; 
+function b(){};
+console.log(a); // 3
+console.log(b); // f b(){}
+```
+
+### 详解
+
+**预编译前奏**
+
+在预编译之前，js会将一切全局变量和未经声明的变量，全部挂载到window下。当然，`let`和`const`声明的变量不会挂载到window下。
+
+```javascript
+var a = 123;
+console.log(window.a); // 123;
+function test() {
+    var b = c = 234;
+    console.log(b); // 234;
+    console.log(c); // 234;
+}
+test();
+console.log(window.c); // 234;
+```
+
+**预编译步骤**
+
+1. 创建AO对象(Activation Object)，执行期上下文。全局情况下创建GO对象（Global Object）全局对象。
+2. 找形参和变量声明，全局情况下找变量声明，将变量和形参名作为AO/GO的属性名，值都为undefined。
+3. 将形参值和形参统一，全局情况下没有这一步。
+4. 查找函数声明，作为AO/GO的属性，赋值为函数体。
+
+**例1：**函数与变量同名
+
+函数的声明会优先与变量的声明（可以这么理解），但是实际上是函数声明的查找在变量提升之后，因此当函数与变量重名的时候，无论函数在全局作用域的哪个位置，只要在变量赋值之前使用，foo都是函数。
+
+```javascript
+console.log(foo); // f foo(){}
+var foo = 1;
+console.log(foo); // 1
+function foo(){};
+```
+
+**例2：**用表达式声明与变量同名的函数。
+
+这种情况下，foo实质上还是一个变量，所以后面的赋值显然会取代前面的赋值。
+
+```javascript
+console.log(foo);
+var foo = 333;
+var foo = function(){}
+console.log(foo);
+```
+
+**例3：**在函数中声明一个和全局变量同名的变量。
+
+此时涉及到了AO的建立和销毁，首先来分析一下GO创建的过程
+
+1. 创建GO对象，找到变量声明，在全局作用域中声明了一个`global`，赋值为undefined。
+2. 查找函数声明，在全局作用域下有一个函数声明`test`，赋值为函数体。
+3. 然后开始执行同步代码，将`global`赋值为100。
+4. 执行`test()`；此时创建AO对象，
+
+接下来分析AO的创建过程
+
+1. 创建AO；查找形参和变量声明，在这个函数中没有形参，于是只有`global`，赋值为undefined。
+2. 所以第一个`console.log(global)`打印出的是`undefined`
+3. 统一形参和实参（没有形参，跳过）
+4. 查找函数声明（函数中没有函数声明了）
+
+继续分析代码的执行
+
+1. `global`赋值为200，所以第二个打印出的是`200`;
+2. 函数中最后将global赋值为300；
+3. 但是在执行完函数之后，AO会被销毁，所以走出了`test()`函数之后，能够访问到的`global`是GO中的值。
+4. 因此最后的打印是100。
+
+```javascript
+global = 100;
+function test() {
+    console.log(global);
+    var global = 200;	
+    console.log(global);
+    var global = 300;
+}
+test();
+var global;
+console.log(global);
+```
 
 ## 事件循环
 

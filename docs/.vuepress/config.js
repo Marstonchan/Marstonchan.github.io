@@ -86,7 +86,8 @@ module.exports = {
                 '/myinterview/DailyIntership/',
                 '/myinterview/DailyIntership/ByteBit1',
                 '/myinterview/DailyIntership/CVTE1',
-                '/myinterview/DailyIntership/CVTE2'
+                '/myinterview/DailyIntership/CVTE2',
+                '/myinterview/DailyIntership/Baidu1'
             ],
             '/myinterview/2021Spring/': [
                 '/myinterview/2021Spring/'
